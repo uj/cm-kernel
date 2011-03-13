@@ -38,28 +38,28 @@ static int headset_status = 0;
 
 static struct q6_hw_info q6_audio_hw[Q6_HW_COUNT] = {
 	[Q6_HW_HANDSET] = {
-		.min_gain = -2000,
-		.max_gain = 0,
+		.min_gain = -1000,
+		.max_gain = 1000,
 	},
 	[Q6_HW_HEADSET] = {
-		.min_gain = -2000,
-		.max_gain = 0,
+		.min_gain = -1000,
+		.max_gain = 1000,
 	},
 	[Q6_HW_SPEAKER] = {
-		.min_gain = -1500,
-		.max_gain = 0,
+		.min_gain = -0500,
+		.max_gain = 1000,
 	},
 	[Q6_HW_TTY] = {
-		.min_gain = -2000,
-		.max_gain = 0,
+		.min_gain = -1000,
+		.max_gain = 1000,
 	},
 	[Q6_HW_BT_SCO] = {
-		.min_gain = -2000,
-		.max_gain = 0,
+		.min_gain = -1000,
+		.max_gain = 1000,
 	},
 	[Q6_HW_BT_A2DP] = {
-		.min_gain = -2000,
-		.max_gain = 0,
+		.min_gain = -1000,
+		.max_gain = 1000,
 	},
 };
 
@@ -224,7 +224,7 @@ void incrediblec_analog_init(void)
 	pmic_spkr_en_hpf(ON_CMD);
 	pmic_spkr_en_sink_curr_from_ref_volt_cir(OFF_CMD);
 	pmic_spkr_set_mux_hpf_corner_freq(SPKR_FREQ_0_73KHZ);
-	pmic_mic_set_volt(MIC_VOLT_1_80V);
+	pmic_mic_set_volt(MIC_VOLT_2_00V);
 	pmic_set_speaker_delay(SPKR_DLY_100MS);
 
 	gpio_request(INCREDIBLEC_AUD_JACKHP_EN, "aud_jackhp_en");
